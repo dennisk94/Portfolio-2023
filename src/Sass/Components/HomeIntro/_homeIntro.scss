@@ -1,0 +1,38 @@
+@use '../../Variables/variables.scss' as *;
+
+.home-intro {
+    color: $text-color;
+    padding: 4rem 15rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin: 22rem 0 10rem 0;
+    background-color: $home-intro-bkgd;
+    border-radius: 10px;
+    .intro-title {
+        text-align: center;
+        margin: 0;
+        font-size: $page-sub-heading;
+    }
+    .intro-text {
+        margin: 0;
+        font-size: $page-sub-heading-3;
+    }
+    @media ( max-width: $tablet ) {
+        padding: 4rem;
+        margin: 10rem 0;
+    }
+    @media ( max-width: $mobile ) {
+        padding: 4rem 1.5rem;
+        margin: 7rem 0;
+        .intro-text {
+            font-size: 1.2rem;
+        }
+    }
+}
+#dark {
+    .home-intro {
+        color: $darkTextColour;
+        background-color: $daarkSectionBkgd;
+    }
+}

@@ -1,0 +1,53 @@
+@use '../../Variables/variables.scss' as *;
+
+.header {
+    background-color: $nav-bkgd;
+    position:relative;
+    .header-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: $max-width-1200;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    .logo {
+        width: 70px;
+        height: 70px;
+        transform: translateY(2px);
+    }
+    .nav-container {
+        .hamburger-icon {
+            width: $social-35;
+            height: $social-35;
+            display: $none;
+            cursor: pointer;
+            path {
+                fill: $wht;
+            }
+        }
+    }
+    @media ( max-width: $mobile ) {
+        .nav-container {
+            .hamburger-icon {
+                width: $social-35;
+                height: $social-35;
+                display: $flex;
+                path {
+                    fill: $blk;
+                }
+            }
+        }
+    }
+}
+
+#dark .header {
+    background-color: $darkPrimary;
+    .nav-container {
+        svg {
+            path {
+                fill: $darkTextColour;
+            }
+        }
+    }
+}

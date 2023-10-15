@@ -1,0 +1,72 @@
+@use '../../../Variables/variables.scss' as *;
+
+.nav-item {
+    font-size: $navLink;
+    font-weight: $semi-bold;
+    color: $navItem;
+    text-decoration: none;
+    transition: $ease-in-out;
+    &:hover {
+        color: $navItemHover;
+    };
+    @media ( max-width: $mobile ) {
+        font-size: $navLink;
+    }
+}
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    z-index: 2;
+    .dark-mode-icon {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        right: 7px;
+        top: 4px;
+    }
+    .light-mode-icon {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 4px;
+        left: 5px;
+        path {
+            fill: $wht;
+        }
+    }
+    @media ( max-width: $mobile ) {
+        display: $none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 64px;
+        gap: 50px;
+        background-color: #000;
+        justify-content: center;
+        padding: 20px 0;
+    }
+    @media ( max-width: $mobile ) {
+        gap: 40px;
+    
+    }
+}
+@media ( max-width: $mobile ) {
+    .nav.menu-opened {
+        display: $flex;
+        flex-direction: column;
+        background-color: $home-intro-bkgd;
+    }
+  
+}
+#dark .nav-item {
+    color: $wht;
+    &:hover {
+        color: #BBD5ED;
+    }
+}
+#dark {
+    .nav.menu-opened {
+        background-color: $darkPrimary;
+    }
+}

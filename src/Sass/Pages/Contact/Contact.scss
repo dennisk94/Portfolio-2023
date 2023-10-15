@@ -1,0 +1,90 @@
+@use '../../Variables/variables.scss' as *;
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+    padding: 100px 0;
+    height: 57.9vh;
+    justify-content: center;
+    .contact-heading {
+        font-size: $page-heading;
+        color: $text-color;
+        margin: 0;
+        text-align: center;
+    }
+    .social-links {
+        display: flex;
+        gap: 3rem;
+        align-items: center;
+        a {
+            color: unset;
+            svg {
+                width: 75px;
+                height: 75px;
+                path {
+                    fill:$blk;
+                    transition: $ease-in-out;
+                }
+                &:hover {
+                    path {
+                        fill: $social-hover;
+                    }
+                }
+            }
+            .email {
+                path {
+                    fill:none;
+                    stroke: $blk;
+                    transition: $ease-in-out;
+                }
+                &:hover {
+                    path {
+                        stroke: $social-hover;
+                        fill: none;
+                    }
+                }
+            }
+        }
+       
+    }
+    @media ( max-width: $mobile ) {
+        .contact-heading {
+            font-size: 4rem;
+        }
+        .social-links {
+            flex-direction: column;
+            gap: $page-heading-sm;
+        }
+    }
+}
+#dark .contact {
+    .contact-heading {
+        color: $darkTextColour;
+    }
+    .social-links {
+        svg {
+            path {
+                fill: $wht;
+            }
+            &:hover {
+                path {
+                    fill: $darkSocialHover;
+                }
+            }
+        }
+        .email {
+            path {
+                stroke: $wht;
+                fill: none;
+            }
+            &:hover {
+                path {
+                    stroke: $darkSocialHover;
+                    fill:none;
+                }
+            }
+        }
+    }
+}

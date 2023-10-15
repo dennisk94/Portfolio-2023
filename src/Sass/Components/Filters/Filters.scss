@@ -1,0 +1,43 @@
+@use '../../Variables/variables.scss' as *;
+
+.filters {
+    background-color: $filters-bkgd;
+    width: fit-content;
+    margin: 0 auto 7rem auto;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    .filter {
+        font-size: $filter;
+        font-weight: $semi-bold;
+        padding: 3px 10px;
+        border:none;
+        border-radius: 4px;
+        margin: 0 10px;
+        cursor: pointer;
+        transition: $ease-in-out;
+        &:hover {
+            background-color: $filter-hover;
+        }
+    }
+    @media ( max-width: $mobile ) {
+        display: flex;
+        gap: 1.5rem;
+        width: auto;
+        flex-direction: column;
+        padding: 1rem;
+        .filter {
+            padding: 5px 10px;
+        }
+    }
+}
+#dark {
+    .filters {
+        background-color: $daarkSectionBkgd;
+        .filter {
+            background-color: $darkFilter;
+            &:hover {
+                background-color: $darkFilterHover;
+            }
+        }
+    }
+}

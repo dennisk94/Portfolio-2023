@@ -1,0 +1,84 @@
+@use '../../Variables/variables.scss' as *;
+
+.footer {
+    display: flex;
+    justify-content: center;
+    background-color: $nav-bkgd;
+    padding: 15px 0;
+    .footer-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 15px;
+        max-width: $max-width-1200;
+        .social-media-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            svg {
+                width: $social-35;
+                height: $social-35;
+                path {
+                    fill: $blk;
+                }
+                &:hover {
+                    path {
+                        fill: $social-hover;
+                    }
+                }
+            }
+            .email {
+                width: 45px;
+                height: 45px;
+                path {
+                    fill: none;
+                    stroke: $blk;
+                }
+                &:hover {
+                    path {
+                        stroke: $social-hover;
+                        fill:none;
+                    }
+                }
+            }
+            a {
+                color: unset;
+            }
+        }
+        .copyright-text {
+            color: $text-color;
+            margin: 0;
+            text-align: center;
+        }
+    }
+}
+#dark .footer {
+    background-color: $darkPrimary;
+    .copyright-text {
+        color: $darkTextColour;
+    }
+    .social-media-wrapper {
+        svg {
+            path {
+                fill: $wht;
+            }
+            &:hover {
+                path {
+                    fill: $darkSocialHover;
+                }
+            }
+        }
+        .email {
+            path {
+                fill: none;
+                stroke: $wht;
+            }
+            &:hover {
+                path {
+                    stroke: $darkSocialHover;
+                    fill: none;
+                }
+            }
+        }
+    }
+}

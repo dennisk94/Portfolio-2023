@@ -1,0 +1,67 @@
+@use '../../Variables/variables.scss' as *;
+
+.btn-primary {
+    display: block;
+    line-height: 40px;
+    font-size: $body-copy;
+    text-decoration: none;
+    color: $text-color;
+    border: 2px solid $linkHover;
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative;
+    transition: .45s ease-in-out;
+    padding: 1px 15px;
+    font-weight: $semi-bold;
+    &:after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background: $linkHover;
+        transition: .45s ease-in-out;
+    }
+    &:hover {
+        color: $wht;
+    }
+    &:hover:after {
+        width: 100%;
+    }
+    span {
+        position: relative;
+        z-index: 2;
+    }
+}
+.btn-primary.normal {
+    line-height: unset;
+    text-transform: none;
+    letter-spacing:1px;
+    padding: 10px 17px;
+    height:100%;
+    @media ( max-width: $mobile-sm ) {
+        padding: 10px 0;
+    }
+}
+.btn-primary.internal {
+    padding: 11px 17px;
+    @media ( max-width: $mobile-sm ) {
+        padding: 10px 0;
+    }
+}
+#dark .btn-primary {
+    color: $darkTextColour;
+    border: 2px solid #BBD5ED;
+    &:hover {
+        color: $blk;
+    }
+    &:after {
+        background-color: #BBD5ED;
+    }
+    &:hover {
+        &:after {
+            background-color: #BBD5ED;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+// Base
+@use './Base/normailze';
+@use './Base/main';
+// Variables
+@use './Variables/variables.scss';
+// Header Footer
+@use './Components/Header-Footer/header.scss';
+@use './Components/Header-Footer/Nav/headerNav.scss';
+@use './Components/Header-Footer/footer.scss';
+// Banner
+@use './Components/Banner/banner';
+// Home Intro
+@use './Components/HomeIntro/homeIntro';
+// Featured Projects
+@use './Components/FeaturedProjects/featuredProjects';
+@use './Components/Filters/Filters.scss';
+// Project Card
+@use './Components/ProjectCard/projectCard';
+@use './Components/Buttons/BtnPrimary.scss';
+// Skills
+@use './Components/Skills/Skill.scss';
+// Pages
+@use './Pages/Contact/Contact.scss';
+@use './Pages/About/About.scss';
+@use './Pages/Work/Work.scss';
+@use './Pages/SingleProject/SingleProject.scss';

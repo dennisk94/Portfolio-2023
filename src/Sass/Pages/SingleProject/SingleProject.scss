@@ -1,0 +1,181 @@
+@use '../../Variables/variables.scss' as *;
+
+.single-project {
+    .banner-wrapper {
+        margin-bottom: 3rem;
+        .banner-img {
+            width:100%;
+        }
+    }
+    .project-title {
+        text-align: center;
+        font-size: $banner-heading-sm;
+        color: $text-color;
+        margin: 1rem 0 5rem 0;
+    }
+    .project-info {
+        padding: 0 10rem;
+        .overview-wrapper {
+            margin: 2rem 0;
+            .overview-heading {
+                font-size: $project-section-heading;
+                color: $text-color;
+            }
+            .overview-text {
+                font-size: $baseline;
+                color: $text-color;
+            }
+        }
+        .tools-role-wrapper {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 7rem;
+            margin: 6rem 0;
+            div {
+                display: flex;
+                flex-direction: column;
+            }
+            h4 {
+                margin: 0 0 1rem 0;
+                font-size: $page-sub-heading;
+                color: $text-color;
+            }
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: .7rem;
+                padding: 0;
+                li {
+                    list-style: none;
+                    color: $text-color;
+                    font-size: $project-li;
+                }
+            }
+        }
+        .links-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 5rem;
+        }
+        .design-wrapper,
+        .development-wrapper,
+        .reflection-wrapper,
+        .project-screenshots {
+            margin-top: 4rem;
+            .design-heading,
+            .development-heading,
+            .reflection-heading,
+            .carousel-heading {
+                font-size: $project-section-heading;
+                color: $text-color;
+            }
+            .design-text,
+            .development-text,
+            .reflection-text {
+                font-size: $baseline;
+                color: $text-color;
+            }
+        }
+        @media ( max-width: $tablet ) {
+            padding: 0;
+        }
+        @media ( max-width: $mobile ) {
+            .tools-role-wrapper { 
+                flex-direction: column;
+                gap:2.5rem;
+            }
+            .links-wrapper {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    }
+}
+.content-wrapper {
+    .prev-next {
+        display: flex;
+        padding: 6rem 10rem;
+        justify-content: space-between;
+        .navigation-link {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: .7rem;
+            text-decoration: none;
+            svg {
+                width: 30px;
+                height: 30px;
+                polyline {
+                    stroke: $blk;
+                    transition: $ease-in-out;
+                }
+            }
+            p {
+                color: $blk;
+                font-size: $baseline;
+                font-weight: $semi-bold;
+                transition: $ease-in-out;
+            }
+            &:hover {
+                svg polyline {
+                    stroke: $navItemHover;
+                }
+                p {
+                    color: $navItemHover;
+                }
+            }
+        }
+        @media ( max-width: $tablet ) {
+            padding: 6rem 0;
+        }
+    }
+}
+#dark .single-project {
+    .project-title {
+        color: $darkTextColour;
+    }
+    .project-info {
+        h2, h3, h4, p, a, li {
+            color: $darkTextColour;
+        }
+    }
+    .project-info {
+        .links-wrapper {
+            a {
+                span {
+                    transition: $ease-in-out;
+                }
+                &:hover {
+                    span {
+                        color: $blk;
+                    }
+                }
+            }
+        }
+    }
+}
+#dark .content-wrapper {
+    .prev-next {
+        a {
+            svg {
+                polyline {
+                    stroke: $darkTextColour;
+                }
+            }
+            p {
+                color: $darkTextColour;
+            }
+            &:hover {
+                svg {
+                    polyline {
+                        stroke: $darkLinkHover;
+                    }
+                }
+                p {
+                    color: $darkLinkHover;
+                }
+            }
+        }
+    }
+}

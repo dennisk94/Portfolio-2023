@@ -1,0 +1,22 @@
+@use '../../Variables/variables.scss' as *;
+
+.featured-projects {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+    padding: 6rem 0;
+    .heading {
+        text-align: center;
+        margin: 0 0 3rem 0;
+        color: $text-color;
+        font-size: $page-heading-sm;
+    }
+    @media ( max-width: $tablet ) {
+        align-items: center;
+    }
+}
+#dark .featured-projects {
+    .heading {
+        color: $darkTextColour;
+    }
+}

@@ -1,0 +1,13 @@
+@use '../Variables/variables.scss' as *;
+
+.main {
+    background-color: $primary;
+  .content-wrapper {
+    max-width: $max-width-1200;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+}
+#dark .main {
+  background: $darkPrimary;
+}

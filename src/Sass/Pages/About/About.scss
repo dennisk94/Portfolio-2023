@@ -1,0 +1,60 @@
+@use '../../Variables/variables.scss' as *;
+
+.about {
+    color: $text-color;
+    display: flex;
+    flex-direction: column;
+    gap: 81px;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 5rem 0;
+    .intro {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        .heading {
+            margin: 0;
+            text-align: center;
+            font-size: $page-heading;
+        }
+        .paragraph {
+            margin: 0;
+            font-size: $page-sub-heading-2;
+            line-height: 1.5;
+        }
+    }
+    .toolkit {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        .toolkit-heading {
+            text-align: center;
+            font-size: $page-sub-heading;
+            margin:0;
+        }
+        .tools {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            justify-items: center;
+            row-gap: 1.5rem;
+            padding-left: 0;
+            .tool {
+                margin: 0;
+                font-size: 1.5rem;
+                list-style: none;
+                text-align: center;
+            }
+        }
+    }
+    @media ( max-width: $mobile ) {
+        .toolkit {
+            .tools {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    }
+}
+#dark .about {
+    color: $darkTextColour;
+}

@@ -1,0 +1,114 @@
+@use '../../Variables/variables.scss' as *;
+
+.project-card {
+    display: flex;
+    gap: 2.2rem;
+    &:nth-child( 2n ) {
+        flex-direction: row-reverse;
+    }
+    .project-info {
+        color: $text-color;
+        width:50%;
+        .project-link {
+            text-decoration: none;
+            display:block;
+            width: fit-content;
+            .project-title {
+                color: $text-color;
+                margin: 0 0 2rem 0;
+                font-size: $project-heading;
+                font-weight: $bold;
+                transition: $ease-in-out;
+                &:hover {
+                    color: $linkHover;
+                }
+            }
+        }
+      
+        .project-details {
+            p {
+                margin: 0;
+                font-size: $baseline;
+            }
+            .links {
+                display: flex;
+                gap: 1rem;
+                margin-top: 1.5rem;
+            }
+        }
+    }
+    .project-thumbnail {
+        width: 50%;
+        border-radius: 7px;
+        object-fit: contain;
+        height: auto;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06);
+    }
+    @media ( max-width: $tablet ) {
+        gap: 25px;
+        flex-direction: column;
+        max-width: 76%;
+        &:nth-child(2n) {
+            flex-direction: column;
+        }
+        .project-info {
+            width: 100%;
+            .project-details {
+                .links { 
+                    margin-top: 3rem;
+                }
+            }
+            
+        }
+        .project-thumbnail {
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+    @media ( max-width: $mobile ) {
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+        .project-thumbnail {
+            width: 100%;
+            object-fit: contain;
+        }
+        .project-info {
+            width: 100%;
+            .project-details {
+                .links {
+                    a {
+                        justify-content: center;
+                        font-size: $body-copy-16;
+                    }
+                }
+            }
+        }
+    }
+    @media ( max-width: $mobile-sm ) {
+        .project-info {
+            .project-details {
+                .links {
+                    flex-direction: column;
+                    gap: 25px;
+                    a {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    
+    }
+}
+#dark .project-card {
+    .project-title {
+        color: $darkTextColour;
+    }
+    .project-info {
+        .project-details {
+            p {
+                color: $darkTextColour;
+            }
+        }
+    }
+}
