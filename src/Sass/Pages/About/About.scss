@@ -17,10 +17,14 @@
             text-align: center;
             font-size: $page-heading;
         }
-        .paragraph {
+        p {
             margin: 0;
             font-size: $page-sub-heading-2;
             line-height: 1.5;
+            a {
+                color: $linkHover;
+                text-decoration: none;
+            }
         }
     }
     .toolkit {
@@ -57,4 +61,11 @@
 }
 #dark .about {
     color: $darkTextColour;
+    .intro {
+        p {
+            a {
+                color: $darkBorder;
+            }
+        }
+    }
 }

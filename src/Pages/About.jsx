@@ -1,6 +1,7 @@
 import React from 'react'
 import { Helmet } from "react-helmet";
 import { useState, useEffect } from 'react';
+import parse from 'html-react-parser';
 import { motion } from 'framer-motion';
 import { fetchPageData } from '../FetchData/fetchPageData';
 import Tool from '../Components/Toolkit/Tool';
@@ -47,6 +48,8 @@ const About = () => {
     return;
   }
 
+  let parsedText = parse(aboutPageData.biography);
+
   return (
     <div className='about'>
        <Helmet>
@@ -63,9 +66,7 @@ const About = () => {
         <h1 className="heading">
           { aboutPageData.about_heading }
         </h1>
-        <p className="paragraph">
-          { aboutPageData.biography }
-        </p>
+        { parsedText }
       </motion.div>
       <motion.div 
         variants={aboutToolkit}
