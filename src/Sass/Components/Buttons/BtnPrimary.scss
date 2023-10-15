@@ -52,16 +52,16 @@
 }
 #dark .btn-primary {
     color: $darkTextColour;
-    border: 2px solid #BBD5ED;
+    border: 2px solid $darkBorder;
     &:hover {
         color: $blk;
     }
     &:after {
-        background-color: #BBD5ED;
+        background-color: $darkBorder;
     }
     &:hover {
         &:after {
-            background-color: #BBD5ED;
+            background-color: $darkBorder;
         }
     }
 }
