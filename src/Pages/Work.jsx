@@ -1,7 +1,6 @@
 import React from 'react'
 import { Helmet } from "react-helmet";
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 import { fetchProjectData } from '../FetchData/fetchProjectData';
 import Filter from '../Components/Filters/Filter'
 import ProjectCard from '../Components/Project/ProjectCard';
@@ -58,7 +57,7 @@ const Work = () => {
   return (
     <div className='work'>
       <Helmet>
-        <title>Dennis Kim | Projects</title>
+        <title>Dennis Kim | Work</title>
         <meta name="description" content="The projects page for Dennis Kim's Portfolio."/>
         <meta name="keywords" content="Projects, Works, Web Developer, Front-End, Development, Web Development, Jr. Developer, HTML, CSS, JavaScript, WordPress, Portfolio" />
       </Helmet>
